@@ -1,0 +1,24 @@
+% The code is quite messy !!!
+
+\documentclass[tikz,border=10pt]{standalone}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage[european, straightvoltages, RPvoltages, cute inductor]{circuitikz}  % RPvoltages definie la convention des dipoles (sens tension faux sinon)
+
+\begin{document}
+
+\begin{circuitikz}        
+    % Circuit code
+    \draw (0,0) to[short,o-o] ++ (4.5,0);
+    \draw (0,2) to[short,o-] (0.5,2) to[L, l_=L] (2,2) to[C, l_=C] (3,2) -- (3.5,2) coordinate(a);
+    \draw (a) to[short, -o] ++ (1,0);
+    \draw (a) to[R, name=R, *-*] ++(0,-2);
+    \node at (R.center) {R};  % draw label "R" at the center of the resistance
+
+    % Voltage labels
+    \draw (0,2) to[open,v=V$_{\text{in}}$\;] ++(0,-2);
+    \draw (4.5,2) to[open,v^=\hspace{1.5mm} V$_{\text{out}}$] ++(0,-2);
+\end{circuitikz}
+
+\end{document}
