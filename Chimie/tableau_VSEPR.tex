@@ -1,0 +1,38 @@
+% The code is quite messy !!!
+
+\documentclass[border=10pt]{standalone}
+
+\usepackage{chemfig}
+\usepackage{chemmacros}
+\usepackage{makecell}
+\usepackage{bm}
+\usepackage[version=4]{mhchem}
+\usepackage{upgreek}
+
+
+\begin{document}
+
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Formule} $\bm{AX_nE_p}$ & \textbf{Géométrie} & \textbf{Exemple} & \textbf{Représentation spatiale} & \textbf{Angle} \\ \hline
+        $\bm{AX_2}$ & Linéaire & \ce{CO2} & \makecell{ \\
+        \chemfig{C(-[:0]O)(-[:180]O)} \\ \\ }\vspace{-2mm} & \ang{180} \\ \hline
+        $\bm{AX_3}$ & Trigonale plane & \ce{AlCl3} & 
+        \makecell{ \\ \chemfig{Al(-[:0, .9]Cl)(-[:120, .9]Cl)(-[:-120, .9]Cl)} \\ \\ }\vspace{-2mm}  & \ang{120} \\ \hline
+        $\bm{AX_2E_1}$ & Coudée en V & \ce{SO2} & 
+        \makecell{\orbital[color=gray, half]{p} \\ \vspace{-2mm}\chemfig{O-[::+50, .8]S-[::-100, .8]O} \\ \\ } & $<\ang{120}$ \\ \hline
+        $\bm{AX_4}$ & Tétraédrique & \ce{CH4} & 
+        \makecell{ \\ \chemfig{C(-[:90, .9]H)(<[:-30, .9]H)(-[:-150, .9]H)(<:H)} \\ \\  }\vspace{-1mm} & \ang{109.5} \\ \hline
+        $\bm{AX_3E_1}$ & \makecell{Pyramidale à \\ base trigonale} & \ce{NH3} & 
+        \makecell{\, \orbital[color=gray, half]{p} \\ \chemfig{N(<[:-160]H)(-[:-40, 1.1]H)(<:[:-130]H)} \\ \\ } \vspace{-2mm} & $<\ang{109.5}$ \\ \hline
+        $\bm{AX_2E_2}$ & Coudée & \ce{H2O} & 
+        \hspace{-8mm}\makecell{\raisebox{2mm}{\orbital[angle=135, color=gray, half]{p} \, \orbital[angle=35, color=gray, half]{p}} \hspace{-1.7cm}\chemfig{O(<[:-110, .9]H)(<:[:-70, .9]H)} \\ \\ } \vspace{-2mm} & $<\ang{109.5}$ \\ \hline
+        $\bm{AX_5}$ & \makecell{Bipyramidale \\ trigonale} & \ce{PCl5} & 
+        \makecell{ \\ \chemfig{P(-[:90, .9]Cl)(-[:180, .9]Cl)(-[:-90, .9]Cl)(<[:-30, .8]Cl)(<:[:30, .8]Cl)} \\ \\ }\vspace{-2mm} & \makecell{\ang{120} horizontal \\ \ang{90} vertical} \\ \hline
+        $\bm{AX_6}$ & Octaédrique & \ce{SF6} & 
+        \makecell{ \\ \chemfig{S(-[:90, .9]F)(-[:-90, .9]F)(<:[:30, .8]F)(<[:-30, .8]F)(<[:-150, .8]F)(<:[:150, .8]F)} \\ \\ }\vspace{-2mm}  & \ang{90} \\ \hline
+        $\bm{AX_4E_2}$ & Plan carré & \ce{XeF4} & 
+        \makecell{\raisebox{3mm}{\orbital[color=gray, half]{p}} \hspace{-1.75cm}\chemfig{Xe(<:[:30, .9]F)(<[:-30, .9]F)(<[:-150, .9]F)(<:[:150, .9]F)} \hspace{-1.8cm}\raisebox{-1mm}{\orbital[angle=270, color=gray, half]{p}} \\ } & \ang{90} \\ \hline
+    \end{tabular}
+
+\end{document}
